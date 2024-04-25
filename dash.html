@@ -1,0 +1,13 @@
+<h1>Wiki Pages</h1>
+
+<p>
+	<form action="/create">
+		<input type="text" name="page">
+		<button>Create page</button>
+	</form>
+	<ul>
+		{{range $val := .}}
+			<li><a href='/view/{{ $val }}'>{{$val}}</a></li>
+		{{end}}
+	</ul>
+</p>
