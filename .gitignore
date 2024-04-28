@@ -14,6 +14,9 @@
 # Ignore wiki txt files
 *.txt
 
+# Mac OS files 
+.DS_Store
+
 # Output of the go coverage tool, specifically when used with LiteIDE
 *.out
 
