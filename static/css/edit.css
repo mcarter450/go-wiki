@@ -1,0 +1,66 @@
+header {
+	background-color: #007d9c;
+	padding: 1rem;
+}
+
+h1 {
+	background-color: #dedede;
+	font-size: 1.5em;
+	margin-top: 0;
+	padding: 1rem;
+	text-align: center;
+}
+
+.breadcrumb {
+	display: inline-block;
+	font-family: sans-serif;
+	color: #ffffff;
+}
+
+.breadcrumb > a {
+	color: #ffffff;
+}
+
+#main {
+	max-width: 1200px;
+	padding: 1em;
+}
+
+.buttons > input {
+	display: inline-block;
+	cursor: pointer;
+	background-color: #007d9c;
+	color: #ffffff;
+	font-size: 1rem;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 0.5rem;
+	padding: 0.5rem 1rem;
+}
+
+.buttons > input:hover {
+	background-color: #1791af;
+}
+
+.buttons,
+textarea {
+	width: 650px;
+}
+
+@media (max-width: 650px) {
+	.buttons,
+	textarea {
+		width: 100%;
+	}
+}
+
+.save {
+	float: right;
+}
+
+.error {
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	font-family: sans-serif;
+	color: red;
+}

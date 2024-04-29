@@ -2,41 +2,39 @@
 <html>
 <head>
     <title>Go Wiki</title>
-<style>
-	#main {
-		max-width: 1200px;
-	}
-	.buttons > input {
-		cursor: pointer;
-	}
-	.buttons,
-	textarea {
-		max-width: 650px;
-	}
-	@media (max-width: 650px) {
-		.buttons,
-		textarea {
-			max-width: 100%;
-		}
-	}
-	.save {
-		float: right;
-	}
-</style>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link rel="stylesheet" href="/static/css/base.css" media="all" />
+    <link rel="stylesheet" href="/static/css/edit.css" media="all" />
 </head>
 <body>
-<div id="main">
-	<h1>Editing - {{.Title}}</h1>
+	<header>
+		<span class="breadcrumb"><a href="/">Home</a> &gt; {{.Title}}</span>
+    </header>
 
-	<form action="/save/{{.Title}}" method="POST">
-	<div>
-		<textarea name="body" rows="20" cols="80">{{printf "%s" .Body}}</textarea>
+	<h1>Editing - {{.Title}}</h1>
+	<script type="text/javascript">
+		function onSubmit(e) {
+			if (document.getElementById("pageBody").value == '') {
+				e.preventDefault();
+				document.getElementById("error").innerHTML = 'Page body is required';
+				return false;
+			}
+		}
+		function onClick(e) {
+			history.back();
+		}
+	</script>
+	<div id="main">
+		<form action="/save/{{.Title}}" onsubmit="onSubmit(event)" method="POST">
+		<div>
+			<textarea id="pageBody" name="body" rows="20">{{printf "%s" .Body}}</textarea>
+			<div class="error" id="error"></div>
+		</div>
+		<div class="buttons">
+			<input class="save" type="submit" name="submit" value="Save">
+			<input type="button" name="cancel" onclick="onClick(event)" value="Cancel">
+		</div>
+		</form>
 	</div>
-	<div class="buttons">
-		<input class="save" type="submit" name="submit" value="Save">
-		<input type="submit" name="submit" value="Cancel">
-	</div>
-	</form>
-</div>
 </body>
 </html>

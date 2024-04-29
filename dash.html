@@ -2,19 +2,23 @@
 <html>
 <head>
     <title>Go Wiki</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link rel="stylesheet" href="/static/css/base.css" media="all" />
+    <link rel="stylesheet" href="/static/css/dash.css" media="all" />
 </head>
 <body>
 <h1>Wiki Pages</h1>
-<p>
+<div id="main">
 	<form action="/create">
 		<input type="text" name="page">
 		<button>Create page</button>
 	</form>
-	<ul>
+	<ul class="wiki-files">
 		{{range $val := .}}
-			<li><a href='/view/{{ $val }}'>{{$val}}</a></li>
+			<li class="wiki-file"><span class="wiki-file--title"><a href='/view/{{ $val.Title }}'>{{$val.Title}}</a></span>
+				<span class="wiki-file--info"><b>Last updated:</b> {{$val.LastUpdated}} <a class="edit" href="/edit/{{$val.Title}}">[edit]</a></span></li>
 		{{end}}
 	</ul>
-</p>
+</div>
 </body>
 </html>

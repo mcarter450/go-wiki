@@ -1,0 +1,61 @@
+h1 {
+	color: #ffffff;
+	background-color: #007d9c;
+	padding: 0.5em;
+	margin-top: 0;
+	font-size: 1.7rem;
+}
+
+form {
+	margin-bottom: 1.5rem;
+}
+
+input {
+	font-size: 1rem;
+	padding: 0.5rem 1rem;
+}
+
+button {
+	display: inline-block;
+	cursor: pointer;
+	background-color: #007d9c;
+	color: #ffffff;
+	font-size: 1rem;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 0.5rem;
+	padding: 0.5rem 1rem;
+}
+
+button:hover {
+	background-color: #1791af;
+}
+
+.wiki-files {
+	margin-left: 0;
+	padding-left: 0;
+	line-height: 2em;
+}
+
+.wiki-file {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	border-bottom: 1px solid #dedede;
+	padding-bottom: 0.2rem;
+	margin-bottom: 0.5rem;
+}
+
+.wiki-file .wiki-file--title {
+	font-size: 1.5rem;
+}
+
+.wiki-file .wiki-file--info {
+	font-family: sans-serif;
+	color: #666666;
+}
+
+.wiki-file .wiki-file--info .edit {
+	margin-left: 1rem;
+}
